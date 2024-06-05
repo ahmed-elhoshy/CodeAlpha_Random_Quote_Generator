@@ -23,20 +23,19 @@ class _HomeScreenState extends State<HomeScreen> {
     'All you need is love” - Beatles',
     'You are nothing short of my everything'
   ];
-  var randomItem = 'sss';
-  String text = 'sddf';
+  var randomItem = '...';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Random Quote',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Color(0xFF012846),
+        backgroundColor: Color(0xFF651AA9),
       ),
-      backgroundColor: MyTheme.primaryLight,
+      backgroundColor: MyTheme.whiteColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -46,13 +45,13 @@ class _HomeScreenState extends State<HomeScreen> {
               width: MediaQuery.of(context).size.width * 0.8,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color(0xFF012846),
+                color: const Color(0xFF651AA9),
               ),
               child: Center(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Text(
-                    '${randomItem}',
+                    randomItem,
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         color: Colors.white, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
@@ -69,17 +68,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 randomItem = (Quotes..shuffle()).first;
                 setState(() {});
               },
-              child: Text(
+              child: const Text(
                 'Generate random quote',
                 style: TextStyle(
                   fontSize: 20,
-                  color: Color(0xFF012846),
+                  color: Color(0xFF651AA9),
                 ),
               )),
           ElevatedButton(
               onPressed: () {
                 Share.share(randomItem);
-                print(randomItem);
               },
               child: Text(
                 'Share',
