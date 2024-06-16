@@ -24,7 +24,8 @@ class _HomeScreenState extends State<HomeScreen> {
     'All you need is love” - Beatles',
     'You are nothing short of my everything'
   ];
-  var randomItem = '...';
+  var randomItem;
+
   bool clicked = false;
 
   @override
